@@ -22,6 +22,7 @@ def liste_lignes_barres(
   
   
   """
+  s=pd.Series()
   if len(df.columns)!=3:
     return "Il faut 3 colonnes  !"
   df.columns=['x_var','y_var','val']
