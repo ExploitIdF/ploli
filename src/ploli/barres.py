@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
@@ -42,7 +43,7 @@ def liste_lignes_barres(
   max_per_v2['max_val_norm'] = max_per_v2['max_val'] * normalization_factor
 
   # Création du graphique
-  fig, ax = plt.subplots(figsize=(xlen/2.54, ylen/2.54))  # conversion cm en inches
+  fig, ax = matplotlib.pyplot.subplots(figsize=(xlen/2.54, ylen/2.54))  # conversion cm en inches
 
   # Position y cumulative pour chaque v2
   y_positions = {}
