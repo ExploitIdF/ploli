@@ -5,18 +5,18 @@ def liste_lignes_barres(
   titre_graph="titre",  
   nom_fich='graph.jpg'  
 ):
-```
-Variables :
-def liste_lignes_barres(
-  df, # x_var,y_var,val
-  xlen, #cm
-  ylen,
-  titre_graph="titre",  
-  nom_fich='graph.jpg'  
-):
-
-
-```
+  ```
+  Variables :
+  def liste_lignes_barres(
+    df, # x_var,y_var,val
+    xlen, #cm
+    ylen,
+    titre_graph="titre",  
+    nom_fich='graph.jpg'  
+  ):
+  
+  
+  ```
   if len(df.columns)!=3:
     return "Il faut 3 colonnes  !"
   df.columns=['x_var','y_var','val']
