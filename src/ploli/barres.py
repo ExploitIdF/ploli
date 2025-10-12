@@ -1,3 +1,8 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle
+
 def liste_lignes_barres(
   df, # x_var,y_var,val
   xlen, #cm
