@@ -23,7 +23,6 @@ def liste_lignes_barres(
   
   
   """
-  s=pd.Series()
   if len(df.columns)!=3:
     return "Il faut 3 colonnes  !"
   df.columns=['x_var','y_var','val']
@@ -100,7 +99,8 @@ def plot_grouped_bars(
     ylen: float,
     titre_graph: str = "Titre du graphique",
     nom_fich: str = 'graph.jpg',
-    padding: float = 0.1
+    padding: float = 0.1,
+    barCol: str="#d33"
 ):
     """
     Génère et sauvegarde un graphique de barres groupées et empilées verticalement.
@@ -118,6 +118,7 @@ def plot_grouped_bars(
         titre_graph (str, optional): Titre du graphique.
         nom_fich (str, optional): Nom du fichier de sortie.
         padding (float, optional): Espace relatif entre les groupes (ex: 0.1 pour 10%).
+        barCol: str,optional) ="#d33" Couleur des barres
     """
     # --- 1. Validation et préparation des données ---
     required_cols = [x_col, y_col, val_col]
@@ -160,7 +161,7 @@ def plot_grouped_bars(
     # Bandes de fond colorées pour la lisibilité
     band_width = 6
     for i in range(int(np.ceil(len(x_categories) / band_width))):
-        rect = Rectangle((i * band_width, 0), band_width, ylen, facecolor='#f0f0f0', zorder=0)
+        rect = Rectangle((i * band_width, 0), band_width/2, ylen, facecolor='#f0f0f0', zorder=0)
         ax.add_patch(rect)
 
     # --- 4. Tracer les barres et les lignes ---
@@ -180,7 +181,7 @@ def plot_grouped_bars(
 
         # Tracer les barres
         ax.bar(group_data['x_pos'], group_data['val_norm'], bottom=y_pos_start, 
-               width=0.8, color='#d62728', alpha=0.8, zorder=2)
+               width=0.8, color=barCol, alpha=0.8, zorder=2)
 
     # --- 5. Configuration finale des axes et de la mise en page ---
     ax.set_xlim(-0.5, len(x_categories) - 0.5)
