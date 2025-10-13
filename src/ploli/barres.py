@@ -172,7 +172,7 @@ def plot_grouped_bars(
         ax.axhline(y=group_info['padded_height_norm'] + y_pos_start, color='gray', linewidth=0.5, linestyle='--')
         
         # Données spécifiques à ce groupe
-        group_data = df_plot[df_plot['y_var'] == group_name]
+        group_data = df_plot[df_plot['y_var'] == group_name].copy()
         
         # Créer un mapping de la catégorie x à sa position numérique
         x_pos_map = {category: i for i, category in enumerate(x_categories)}
