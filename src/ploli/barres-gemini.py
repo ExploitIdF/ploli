@@ -45,7 +45,7 @@ def plot_grouped_bars(
     
     # --- 2. Calcul des hauteurs et normalisation ---
     # Hauteur max pour chaque groupe (étage)
-    max_per_group = df_plot.groupby('y_var')['val'].max()
+    max_per_group = df_plot.groupby('y_var',sort=False)['val'].max()
     
     # Ajout d'un espacement (padding) entre les groupes
     # L'espacement est proportionnel à la hauteur totale des données
